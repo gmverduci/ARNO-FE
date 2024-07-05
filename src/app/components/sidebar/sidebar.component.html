@@ -1,0 +1,132 @@
+<div class="wrapper container-fluid py-4 px-4 min-vh-100">
+  <div
+    class="row flex-nowrap sidebar shadow rounded-5 border border-1 border-opacity-25 h-100"
+  >
+    <div
+      class="col-auto col-md-3 col-xl-2 px-0 bg-secondary rounded-start-5 h-100"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start ps-3 py-4 text-white h-100"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center pb-3 mb-md-2 me-md-auto text-white text-decoration-none"
+        >
+          <div class="container-fluid fs-5 d-none d-sm-inline pe-4 mb-3"
+            ><img
+              src="../../../assets/img/orca.png"
+              alt=""
+              class="img-fluid logo logo-white"
+          /></div>
+        </a>
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 mt-2 align-items-center align-items-sm-start justify-content-between"
+          id="menu"
+        >
+          <li class="nav-item rounded-start-5 mb-4 ps-3 tab-li">
+            <a
+              routerLink="/dashboard/reparto"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-house"></i>
+              <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+            <a
+              routerLink="/dashboard/pazienti"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-people"></i>
+              <span class="ms-1 d-none d-sm-inline">Pazienti</span>
+            </a>
+          </li>
+          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+            <a
+              routerLink="/dashboard/consegne"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-clipboard-check"></i>
+              <span class="ms-1 d-none d-sm-inline">Consegne</span>
+            </a>
+          </li>
+          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+            <a
+              routerLink="/dashboard/ordini"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-list-check"></i>
+              <span class="ms-1 d-none d-sm-inline">Ordini</span>
+            </a>
+          </li>
+          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+            <a
+routerLink="/dashboard/terapie"              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-capsule"></i>
+              <span class="ms-1 d-none d-sm-inline">Terapie</span>
+            </a>
+          </li>
+          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+            <a
+              routerLink="/dashboard/calendario"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-calendar-check"></i>
+              <span class="ms-1 d-none d-sm-inline">Calendario</span>
+            </a>
+          </li>
+          <li class="nav-item rounded-start-5 mb-1 ps-3 tab-li">
+            <a
+              routerLink="/dashboard/documenti"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-file-earmark-text"></i>
+              <span class="ms-1 d-none d-sm-inline">Documenti</span>
+            </a>
+          </li>
+          <li *ngIf="user?.user?.ruolo == 'ADMIN'" class="nav-item rounded-start-5 mb-2 ps-3 mt-5 tab-li">
+            <a
+              routerLink="/dashboard/admin"
+              class="nav-link align-middle d-flex align-items-center px-0 tab"
+            >
+              <i class="fs-4 me-2 bi-gear"></i>
+              <span class="ms-1 d-none d-sm-inline">ADMIN</span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+        <div class="dropdown ms-2">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="../../../assets/img/people.png"
+              alt="avatar"
+              width="35"
+              height="35"
+              class="rounded-circle me-1"
+            />
+            <span class="d-none d-sm-inline mx-1">{{ user?.user?.username }}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col py-3 px-2 bg-light rounded-end-5">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

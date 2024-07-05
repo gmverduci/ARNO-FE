@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/_custom-styles.scss";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F5F5F5;
+  font-family: "Raleway", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.navbar,
+.btn .footer {
+  font-family: "Raleway", sans-serif;
+}
+
+/*a:hover, a:focus {
+  color: #BFD7EA !important;
+}*/

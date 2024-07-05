@@ -1,0 +1,210 @@
+<section class="p-3 p-md-2 p-xl-4 wrapper">
+  <div class="container container-1">
+    <div class="row bg-transparent justify-content-center">
+      <div class="col-12 col-xxl-11">
+        <div class="card rounded-5 border-0 bg-transparent shadow">
+          <div class="row g-0">
+            <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+              <div class="col-12 col-lg-11 col-xl-10">
+                <div class="card-body p-2 p-md-4 p-xl-5">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-1">
+                        <div class="text-center mb-3">
+                          <a routerLink="/">
+                            <img
+                              src="../../../assets/img/orca.png"
+                              alt="arno Logo"
+                              width="175"
+                            />
+                          </a>
+                        </div>
+                        <h4 class="text-center">Benvenuto!</h4>
+                      </div>
+                      <hr />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="text-center mt-42 mb-3">Inserisci i dati richiesti</p>
+                    </div>
+                  </div>
+                  <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+                    <div class="row gy-3 overflow-hidden">
+                      <div class="col-12 col-md-6">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="nome"
+                            id="nome"
+                            placeholder="Nome"
+                            ngModel
+                            #nome="ngModel"
+                            required
+                          />
+                          <label for="nome" class="form-label">Nome</label>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="cognome"
+                            id="cognome"
+                            placeholder="Cognome"
+                            ngModel
+                            #cognome="ngModel"
+                            required
+                          />
+                          <label for="cognome" class="form-label">Cognome</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row gy-3 overflow-hidden">
+                      <div class="col-12 col-md-6">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="username"
+                            id="username"
+                            placeholder="Username"
+                            ngModel
+                            #username="ngModel"
+                            required
+                          />
+                          <label for="username" class="form-label">Username</label>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="password"
+                            class="form-control shadow rounded-4"
+                            name="password"
+                            id="password"
+                            placeholder="password"
+                            ngModel
+                            #password="ngModel"
+                            required
+                          />
+                          <label for="password" class="form-label">Password</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row gy-3 overflow-hidden">
+                      <div class="col-12 col-md-6">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="numeroTelefono"
+                            id="numeroTelefono"
+                            placeholder="numeroTelefono"
+                            ngModel
+                            #numeroTelefono="ngModel"
+                            required
+                          />
+                          <label for="numeroTelefono" class="form-label">Telefono</label>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            ngModel
+                            #email="ngModel"
+                            required
+                          />
+                          <label for="email" class="form-label">Email</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row gy-3 overflow-hidden">
+                      <div class="col-12">
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="codiceFiscale"
+                            id="codiceFiscale"
+                            placeholder="codiceFiscale"
+                            ngModel
+                            #codiceFiscale="ngModel"
+                            required
+                          />
+                          <label for="codiceFiscale" class="form-label">Codice fiscale</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                          <input
+                            type="text"
+                            class="form-control shadow rounded-4"
+                            name="indirizzo"
+                            id="indirizzo"
+                            placeholder="indirizzo"
+                            ngModel
+                            #indirizzo="ngModel"
+                            required
+                          />
+                          <label for="indirizzo" class="form-label">Indirizzo</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                          <select
+                            class="form-control shadow rounded-4"
+                            name="ruolo"
+                            id="ruolo"
+                            ngModel
+                            #ruolo="ngModel"
+                            required
+                          >
+                            <option value="" disabled selected>Seleziona il ruolo</option>
+                            <option *ngFor="let ruolo of ruoli" [value]="ruolo">{{ ruolo }}</option>
+                          </select>
+                          <label for="ruolo" class="form-label">Ruolo</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button
+                            class="btn btn-outline-primary btn-lg rounded-4"
+                            type="submit"
+                          >
+                            Registrati
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-12">
+                      <div
+                        class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5"
+                      >
+                        <a routerLink="/login" class="link-primary text-decoration-none">Hai già un account?</a>
+                        <a href="#!" class="link-primary text-decoration-none">Password dimenticata?</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none d-md-block col-12 col-md-6">
+              <img
+                class="img-fluid rounded-start w-100 h-100 object-fit-cover"
+                loading="lazy"
+                src="../../../assets/img/login.png"
+                alt="Welcome back you've been missed!"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

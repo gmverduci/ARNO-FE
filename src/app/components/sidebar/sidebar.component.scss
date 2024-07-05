@@ -1,0 +1,44 @@
+a {
+  color: #f5f5f5;
+}
+
+.sidebar {
+  height: 90vh;
+}
+
+.wrapper {
+  background: rgb(253, 248, 241);
+  background: linear-gradient(
+    131deg,
+    rgb(252, 237, 216) 50%,
+    rgba(191, 215, 234, 1) 90%
+  );
+}
+
+.tab:hover {
+  margin-left: 5px;
+  transition: margin-left 0.3s;
+}
+
+.tab:hover, .tab:focus {
+    color: #BFD7EA !important;
+}
+
+ul,
+li {
+  width: 100%;
+}
+
+.tab-li {
+  background-color: #577590;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tab-li:focus{
+background-color: transparent;
+}
+
+.logo-white {
+  filter: invert(1);
+}

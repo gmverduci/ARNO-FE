@@ -1,0 +1,19 @@
+<div class="container py-2">
+    <div class="form-floating">
+      <div class="mb-2">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inizia a scrivere nome o cognome del paziente..."
+               [(ngModel)]="termineRicerca" (input)="cercaPazienti()">
+      </div>
+    </div>
+    <div class="container-fluid p-0">
+      <ul class="list-group" *ngIf="!nessunPazienteTrovato; else nessunPaziente">
+        <li class="list-group-item" *ngFor="let paziente of pazientiFiltrati">
+          {{ paziente.anagrafica.nome }} {{ paziente.anagrafica.cognome }}
+        </li>
+      </ul>
+      <ng-template #nessunPaziente>
+        <p>Nessun paziente trovato.</p>
+      </ng-template>
+    </div>
+  </div>
+  
