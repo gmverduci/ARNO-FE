@@ -1,14 +1,30 @@
-<div class="container py-2">
+<div class="row p-2">
+  <div class="col-10">
     <div class="form-floating">
       <div class="mb-2">
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inizia a scrivere nome o cognome del paziente..."
-               [(ngModel)]="termineRicerca" (input)="cercaPazienti()">
-      </div>
+        <input
+          type="text"
+          class="form-control w-50 rounded-4 shadow-sm"
+          id="formGroupExampleInput"
+          placeholder="Inizia a scrivere nome o cognome del paziente..."
+          [(ngModel)]="termineRicerca"
+          (input)="cercaPazienti()"
+        />
+      </div> 
     </div>
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 border-start border-dark">
       <ul class="list-group" *ngIf="!nessunPazienteTrovato; else nessunPaziente">
-        <li class="list-group-item" *ngFor="let paziente of pazientiFiltrati">
-          {{ paziente.anagrafica.nome }} {{ paziente.anagrafica.cognome }}
+        <li class="list-group-item ms-3 w-75 shadow-sm rounded-2" *ngFor="let paziente of pazientiFiltrati">
+          <div class="row px-2 fw-bold d-flex justify-content-between align-items-center">
+            <div class="col-8">
+              {{ paziente.anagrafica.nome }} {{ paziente.anagrafica.cognome }} - {{ paziente.anagrafica.codiceFiscale }}
+            </div>
+            <div class="col-2 d-flex justify-content-end align-items-center">
+              <i class="bi bi-file-text fs-4 text-success py-0 my-0 me-2" data-toggle="tooltip" data-placement="top" title="Dettagli paziente" role="button"></i>
+              <i class="bi bi-pencil-square fs-4 text-warning py-0 my-0 me-2"  data-toggle="tooltip" data-placement="top" title="Modifica" role="button" (click)="selezionaPaziente(paziente)"></i>
+              <i class="bi bi-trash3 fs-4 text-danger py-0 my-0" data-toggle="tooltip" data-placement="top" title="Elimina" role="button"></i>
+            </div>
+          </div>
         </li>
       </ul>
       <ng-template #nessunPaziente>
@@ -16,4 +32,7 @@
       </ng-template>
     </div>
   </div>
-  
+  <div class="col-2">
+
+    <i (click)="scrollToNuovoPaziente()" class="bi bi-person-fill-add text-primary fs-1 float-end me-3 " data-toggle="tooltip" data-placement="top" title="Nuovo paziente" role="button"></i>
+

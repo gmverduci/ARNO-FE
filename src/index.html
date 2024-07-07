@@ -27,5 +27,16 @@
   </head>
   <body>
     <app-root></app-root>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var tooltips = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
+        var tooltipList = tooltips.map(function (tooltipEl) {
+          return new bootstrap.Tooltip(tooltipEl);
+        });
+      });
+    </script>
+
+
   </body>
 </html>

@@ -26,6 +26,12 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AuthService } from './auth/auth.service';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { ListaPazientiComponent } from './components/pazienti/lista-pazienti/lista-pazienti.component';
+import { OperazioniComponent } from './components/operazioni/operazioni.component';
+import { NuovoPazienteComponent } from './components/pazienti/nuovo-paziente/nuovo-paziente.component';
+import { ModificaPazienteComponent } from './components/pazienti/modifica-paziente/modifica-paziente.component';
+
+
+
 
 
 
@@ -48,7 +54,10 @@ import { ListaPazientiComponent } from './components/pazienti/lista-pazienti/lis
     DocumentiComponent,
     WelcomeComponent,
     SignUpComponent,
-    ListaPazientiComponent
+    ListaPazientiComponent,
+    OperazioniComponent,
+    NuovoPazienteComponent,
+    ModificaPazienteComponent,
   ],
   imports: [
     BrowserModule,

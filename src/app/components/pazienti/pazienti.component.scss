@@ -1,7 +1,9 @@
-.wrapper-up {
-    height: 50%
+.wrapper {
+    max-height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
-.wrapper-down {
-    height: 45%;
+.wrapper-up {
+    height: 100%
 }

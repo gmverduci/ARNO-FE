@@ -1,0 +1,78 @@
+<h3 class="text-secondary mb-4">Modifica paziente:</h3>
+<form #modificaPazienteForm="ngForm" (ngSubmit)="onSubmit(modificaPazienteForm)">
+  <div class="row row-gap-2 mb-2">
+    <div class="col-12 col-md-2">
+      <div class="form-floating">
+        <input type="hidden" name="id" id="id" [(ngModel)]="pazienteMod!.id" />
+
+        <input type="text" class="form-control shadow rounded-4" name="nome" id="nome" placeholder="Nome"
+          [(ngModel)]="pazienteMod!.nome" required />
+        <label for="nome" class="form-label">Nome</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-2">
+      <div class="form-floating">
+        <input type="text" class="form-control shadow rounded-4" name="cognome" id="cognome" placeholder="Cognome"
+          [(ngModel)]="pazienteMod!.cognome" required />
+        <label for="cognome" class="form-label">Cognome</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="form-floating">
+        <input type="text" class="form-control shadow rounded-4" name="codiceFiscale" id="codiceFiscale"
+          placeholder="Codice fiscale" [(ngModel)]="pazienteMod!.codiceFiscale" required />
+        <label for="codiceFiscale" class="form-label">Codice fiscale</label>
+      </div>
+    </div>
+    
+    <div class="col-12 col-md-2">
+      <div class="form-floating">
+        <select class="form-control shadow rounded-4" name="sesso" id="sesso" [(ngModel)]="pazienteMod!.sesso"
+          required>
+          <option value="" disabled selected>Sesso</option>
+          <option *ngFor="let sesso of sessi" [value]="sesso">{{ sesso }}</option>
+        </select>
+        <label for="sesso" class="form-label">Sesso</label>
+      </div>
+    </div>
+  </div>
+  <div class="row row-gap-2 mb-4">
+    <div class="col-12 col-md-2">
+      <div class="form-floating">
+        <input type="date" class="form-control shadow rounded-4" name="dataNascita" id="dataNascita"
+          placeholder="Data di nascita" [(ngModel)]="pazienteMod!.dataNascita" required />
+        <label for="dataNascita" class="form-label">Data di nascita</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="form-floating">
+        <input type="text" class="form-control shadow rounded-4" name="indirizzo" id="indirizzo" placeholder="Indirizzo"
+          [(ngModel)]="pazienteMod!.indirizzo" required />
+        <label for="indirizzo" class="form-label">Indirizzo</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-2">
+      <div class="form-floating">
+        <input type="text" class="form-control shadow rounded-4" name="telefono" id="telefono" placeholder="Telefono"
+          [(ngModel)]="pazienteMod!.numeroTelefono" required />
+        <label for="telefono" class="form-label">Telefono</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="form-floating">
+        <input type="text" class="form-control shadow rounded-4" name="telefonoContatto" id="telefonoContatto"
+          placeholder="Telefono contatto" [(ngModel)]="pazienteMod!.numeroTelefonoContatto" required />
+        <label for="telefonoContatto" class="form-label">Telefono Contatto</label>
+      </div>
+    </div>
+  </div>
+  <!-- Pulsanti di reset e submit -->
+  <div class="d-flex justify-content-end pe-2">
+    <button type="button" class="btn btn-outline-danger rounded-start-4 me-2 shadow-sm" (click)="resetModificaPaziente()">
+      <i class="bi bi-x-octagon"></i> Reset
+    </button>
+    <button type="submit" class="btn btn-outline-primary rounded-end-4 shadow-sm">
+      <i class="bi bi-floppy2-fill"></i> Salva
+    </button>
+  </div>
+</form>

@@ -1,9 +1,31 @@
-<div class="container-fluid wrapper-up bg-danger">
+<div class="container-fluid h-100 wrapper">
+  <div class="container-fluid wrapper-up">
     <div class="container-fluid pt-2">
-        <div class="row"><h1 class="text-primary mb-0">Pazienti</h1></div>
+      <div class="row mb-4">
+        <h1 routerLink="/dashboard/consegne" class="text-secondary mb-0">
+          Pazienti
+        </h1>
+      </div>
+      <div
+        class="container-fluid p-2 shadow rounded-5 bg-light-subtle w-75 float-start ms-3"
+      >
         <app-lista-pazienti></app-lista-pazienti>
-</div>
-</div>
-<hr>
-<div class="container-fluid wrapper-down bg-warning">
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div
+    class="container-fluid wrapper-down shadow rounded-5 p-3 px-3 bg-success-subtle mb-3"
+    id="nuovoPaziente"
+  >
+    <app-nuovo-paziente></app-nuovo-paziente>
+  </div>
+  <hr />
+  <div
+    class="container-fluid wrapper-down shadow rounded-5 p-3 px-3 bg-warning-subtle mb-3"
+    id="modificaPaziente"
+    *ngIf="pazienteSelezionato"
+  >
+    <app-modifica-paziente></app-modifica-paziente>
+  </div>
 </div>

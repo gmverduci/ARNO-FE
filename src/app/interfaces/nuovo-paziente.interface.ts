@@ -1,6 +1,4 @@
-export interface Paziente {
-  id: number;
-  anagrafica: {
+export interface NuovoPaziente {
     nome: string;
     cognome: string;
     sesso: string;
@@ -9,5 +7,4 @@ export interface Paziente {
     numeroTelefono: string;
     numeroTelefonoContatto: string;
     codiceFiscale: string;
-  };
-}
+  }
