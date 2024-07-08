@@ -59,7 +59,7 @@
               <span class="ms-1 d-none d-sm-inline">Ordini</span>
             </a>
           </li>
-          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+          <li *ngIf="user?.user?.ruolo != 'OSS'" class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
             <a
 routerLink="/dashboard/terapie"              class="nav-link align-middle d-flex align-items-center px-0 tab"
             >
@@ -67,7 +67,7 @@ routerLink="/dashboard/terapie"              class="nav-link align-middle d-flex
               <span class="ms-1 d-none d-sm-inline">Terapie</span>
             </a>
           </li>
-          <li class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
+          <li *ngIf="user?.user?.ruolo != 'OSS'" class="nav-item rounded-start-5 mb-2 ps-3 tab-li">
             <a
               routerLink="/dashboard/operazioni"
               class="nav-link align-middle d-flex align-items-center px-0 tab"
@@ -76,7 +76,7 @@ routerLink="/dashboard/terapie"              class="nav-link align-middle d-flex
               <span class="ms-1 d-none d-sm-inline">Operazioni</span>
             </a>
           </li>
-          <li class="nav-item rounded-start-5 mb-1 ps-3 tab-li">
+          <li *ngIf="user?.user?.ruolo != 'OSS'" class="nav-item rounded-start-5 mb-1 ps-3 tab-li">
             <a
               routerLink="/dashboard/documenti"
               class="nav-link align-middle d-flex align-items-center px-0 tab"
@@ -104,8 +104,29 @@ routerLink="/dashboard/terapie"              class="nav-link align-middle d-flex
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img
-              src="../../../assets/img/people.png"
+            <img *ngIf="user?.user?.ruolo == 'INFERMIERE'"
+              src="../../../assets/img/nurse.png"
+              alt="avatar"
+              width="35"
+              height="35"
+              class="rounded-circle me-1"
+            />
+            <img *ngIf="user?.user?.ruolo == 'OSS'"
+              src="../../../assets/img/oss.jpg"
+              alt="avatar"
+              width="35"
+              height="35"
+              class="rounded-circle me-1"
+            />
+            <img *ngIf="user?.user?.ruolo == 'MEDICO'"
+              src="../../../assets/img/doctor.jpg"
+              alt="avatar"
+              width="35"
+              height="35"
+              class="rounded-circle me-1"
+            />
+            <img *ngIf="user?.user?.ruolo == 'ADMIN'"
+              src="../../../assets/img/admin.jpg"
               alt="avatar"
               width="35"
               height="35"
@@ -114,13 +135,8 @@ routerLink="/dashboard/terapie"              class="nav-link align-middle d-flex
             <span class="d-none d-sm-inline mx-1">{{ user?.user?.username }}</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            
+            <li><a class="dropdown-item text-danger" (click)="logout()" role="button">Logout</a></li>
           </ul>
         </div>
       </div>

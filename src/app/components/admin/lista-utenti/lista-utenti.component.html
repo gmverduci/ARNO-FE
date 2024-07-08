@@ -1,0 +1,39 @@
+<div class="row p-2">
+    <div class="col-10">
+      <div class="form-floating">
+        <div class="mb-2">
+          <input
+            type="text"
+            class="form-control w-50 rounded-4 shadow-sm"
+            id="formGroupExampleInput"
+            placeholder="Inizia a scrivere nome o cognome utente..."
+            [(ngModel)]="termineRicerca"
+            (input)="cercaUtenti()"
+          />
+        </div> 
+      </div>
+      <div class="container-fluid p-0 border-start border-dark">
+        <ul class="list-group" *ngIf="!nessunUtentetrovato; else nessunUtente">
+          <li class="list-group-item ms-3 w-75 shadow-sm rounded-2 mb-1" *ngFor="let user of filteredUsers">
+            <div class="row px-2 fw-bold d-flex justify-content-between align-items-center">
+              <div class="col-8">
+                {{ user.anagrafica.nome }} {{ user.anagrafica.cognome }} - {{ user.username }}
+              </div>
+              <div class="col-2 d-flex justify-content-end align-items-center">
+                <i class="bi bi-file-text fs-4 text-success py-0 my-0 me-2" data-toggle="tooltip" data-placement="top" title="Dettagli utente" role="button"></i>
+                <i class="bi bi-pencil-square fs-4 text-warning py-0 my-0 me-2"  data-toggle="tooltip" data-placement="top" title="Modifica" role="button"></i>
+                <i class="bi bi-trash3 fs-4 text-danger py-0 my-0" data-toggle="tooltip" data-placement="top" title="Elimina" role="button"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ng-template #nessunUtente>
+          <p>Nessun utente trovato.</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-2">
+  
+      
+  
+  

@@ -29,6 +29,7 @@ import { ListaPazientiComponent } from './components/pazienti/lista-pazienti/lis
 import { OperazioniComponent } from './components/operazioni/operazioni.component';
 import { NuovoPazienteComponent } from './components/pazienti/nuovo-paziente/nuovo-paziente.component';
 import { ModificaPazienteComponent } from './components/pazienti/modifica-paziente/modifica-paziente.component';
+import { ListaUtentiComponent } from './components/admin/lista-utenti/lista-utenti.component';
 
 
 
@@ -58,6 +59,7 @@ import { ModificaPazienteComponent } from './components/pazienti/modifica-pazien
     OperazioniComponent,
     NuovoPazienteComponent,
     ModificaPazienteComponent,
+    ListaUtentiComponent,
   ],
   imports: [
     BrowserModule,

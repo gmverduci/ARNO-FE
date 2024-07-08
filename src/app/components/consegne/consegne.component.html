@@ -1,1 +1,39 @@
-<p>consegne works!</p>
+<div class="row p-2 wrapper">
+    <div class="col-10">
+      <div class="form-floating">
+        <div class="mb-2">
+          <input
+            type="text"
+            class="form-control w-50 rounded-4 shadow-sm"
+            id="formGroupExampleInput"
+            placeholder="Inizia a scrivere nome o cognome del paziente..."
+          />
+        </div> 
+      </div>
+      <div class="container-fluid p-0 border-start border-dark">
+        <ul class="list-group">
+          <li class="list-group-item ms-3 w-75 shadow-sm rounded-2" *ngFor="let consegna of consegne">
+            <div class="row px-2 fw-bold d-flex justify-content-between align-items-center">
+              <div class="col-8">
+                <h5><b>{{consegna.titolo}}</b> - Paziente: {{consegna.paziente}}</h5>
+                <p>{{consegna.contenuto}}</p>
+                <p class="small text-warning">Creata da {{consegna.utente}} il {{consegna.dataCreazione}}</p>
+              </div>
+              <div class="col-2 d-flex justify-content-end align-items-center">
+                <i class="bi bi-file-text fs-4 text-success py-0 my-0 me-2" data-toggle="tooltip" data-placement="top" title="Dettagli consegna" role="button"></i>
+                <i *ngIf="user?.user?.ruolo != 'OSS'" class="bi bi-pencil-square fs-4 text-warning py-0 my-0 me-2"  data-toggle="tooltip" data-placement="top" title="Modifica" role="button" ></i>
+                <i *ngIf="user?.user?.ruolo != 'OSS'" class="bi bi-trash3 fs-4 text-danger py-0 my-0" data-toggle="tooltip" data-placement="top" title="Elimina" role="button"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ng-template #nessunPaziente>
+          <p>Nessun paziente trovato.</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-2">
+  
+      <i class="bi bi-file-earmark-text text-primary fs-1 float-end me-3 " data-toggle="tooltip" data-placement="top" title="Nuova consegna" role="button"></i>
+  
+  

@@ -21,8 +21,8 @@
             </div>
             <div class="col-2 d-flex justify-content-end align-items-center">
               <i class="bi bi-file-text fs-4 text-success py-0 my-0 me-2" data-toggle="tooltip" data-placement="top" title="Dettagli paziente" role="button"></i>
-              <i class="bi bi-pencil-square fs-4 text-warning py-0 my-0 me-2"  data-toggle="tooltip" data-placement="top" title="Modifica" role="button" (click)="selezionaPaziente(paziente)"></i>
-              <i class="bi bi-trash3 fs-4 text-danger py-0 my-0" data-toggle="tooltip" data-placement="top" title="Elimina" role="button"></i>
+              <i *ngIf="user?.user?.ruolo != 'OSS'" class="bi bi-pencil-square fs-4 text-warning py-0 my-0 me-2"  data-toggle="tooltip" data-placement="top" title="Modifica" role="button" (click)="selezionaPaziente(paziente)"></i>
+              <i *ngIf="user?.user?.ruolo != 'OSS'" class="bi bi-trash3 fs-4 text-danger py-0 my-0" data-toggle="tooltip" data-placement="top" title="Elimina" role="button"></i>
             </div>
           </div>
         </li>

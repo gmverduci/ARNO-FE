@@ -3,6 +3,9 @@ import { Paziente } from 'src/app/interfaces/paziente.interface';
 import { PazientiService } from 'src/app/services/pazienti.service';
 import { filter } from 'rxjs/operators';
 import { ModificaPazienteComponent } from '../modifica-paziente/modifica-paziente.component';
+import { AuthService } from 'src/app/auth/auth.service';
+import { User } from 'src/app/interfaces/user.interface';
+import { AuthData } from 'src/app/interfaces/auth-data.interface';
 
 @Component({
   selector: 'app-lista-pazienti',
@@ -18,8 +21,9 @@ export class ListaPazientiComponent implements AfterViewInit {
   pazientiFiltrati: Paziente[] = [];
   termineRicerca: string = '';
   nessunPazienteTrovato: boolean = false;
+  user!: AuthData | null;
 
-  constructor(private pazientiSrv: PazientiService) {}
+  constructor(private pazientiSrv: PazientiService, private authSrv: AuthService) {}
 
   ngOnInit(): void {
     this.pazientiSrv.pazienti$
@@ -33,6 +37,7 @@ export class ListaPazientiComponent implements AfterViewInit {
           console.error('Errore durante il recupero dei pazienti:', error);
         }
       );
+      this.getUserAuth();
   }
 
   ngAfterViewInit(): void {
@@ -85,6 +90,9 @@ export class ListaPazientiComponent implements AfterViewInit {
     this.pazientiSrv.setPazienteSelezionato(paziente);
 this.scrollToModificaPaziente();  }
  
-
+getUserAuth(){
+this.authSrv.user$.subscribe((user) => this.user = user);
+console.log(this.user)
+}
   
 }
