@@ -13,14 +13,14 @@
       </div>
     </div>
   </div>
-  <hr />
-  <div
+  <hr *ngIf="user?.user?.ruolo != 'OSS'"/>
+  <div *ngIf="user?.user?.ruolo != 'OSS'"
     class="container-fluid wrapper-down shadow rounded-5 p-3 px-3 bg-success-subtle mb-3"
     id="nuovoPaziente"
   >
     <app-nuovo-paziente></app-nuovo-paziente>
   </div>
-  <hr />
+  <hr *ngIf="user?.user?.ruolo != 'OSS'"/>
   <div
     class="container-fluid wrapper-down shadow rounded-5 p-3 px-3 bg-warning-subtle mb-3"
     id="modificaPaziente"

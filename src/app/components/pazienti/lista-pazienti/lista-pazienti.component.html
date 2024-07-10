@@ -34,5 +34,5 @@
   </div>
   <div class="col-2">
 
-    <i (click)="scrollToNuovoPaziente()" class="bi bi-person-fill-add text-primary fs-1 float-end me-3 " data-toggle="tooltip" data-placement="top" title="Nuovo paziente" role="button"></i>
+    <i *ngIf="user?.user?.ruolo != 'OSS'" (click)="scrollToNuovoPaziente()" class="bi bi-person-fill-add text-primary fs-1 float-end me-3 " data-toggle="tooltip" data-placement="top" title="Nuovo paziente" role="button"></i>
 
